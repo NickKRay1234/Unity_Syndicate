@@ -9,10 +9,10 @@ namespace CodeBase.Infrastructure
 
     public Game()
     {
-      RegisterInputInput();
+      RegisterInputService();
     }
 
-    private static void RegisterInputInput()
+    private static void RegisterInputService()
     {
       if (Application.isEditor)
         InputService = new StandaloneInputService();
