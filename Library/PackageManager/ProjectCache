@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637948992252173747
-    m_Hash: 1836328988
+      ticks: 637949007654279100
+    m_Hash: 3835141854
   m_LockFileStatus:
     m_FilePath: C:/WorkAndStudyFolder/Unity Projects/KnowledgeIsPower/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637948992278974679
-    m_Hash: 621124589
+      ticks: 637949007654287403
+    m_Hash: 2988832410
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:

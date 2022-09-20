@@ -52,21 +52,23 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\CodeBase\Services\Input\InputService.cs" />
-     <Compile Include="Assets\CodeBase\Services\Input\MobileInputService.cs" />
-     <Compile Include="Assets\CodeBase\Logic\AnimatorStateReporter.cs" />
-     <Compile Include="Assets\CodeBase\Hero\HeroAnimator.cs" />
-     <Compile Include="Assets\CodeBase\Logic\AnimatorState.cs" />
-     <Compile Include="Assets\CodeBase\CameraLogic\CameraFollow.cs" />
-     <Compile Include="Assets\CodeBase\Infrastructure\GameBootstrapper.cs" />
-     <Compile Include="Assets\CodeBase\Services\Input\StandaloneInputService.cs" />
-     <Compile Include="Assets\CodeBase\Constants.cs" />
-     <Compile Include="Assets\CodeBase\Infrastructure\Game.cs" />
-     <Compile Include="Assets\CodeBase\Hero\HeroMove.cs" />
-     <Compile Include="Assets\CodeBase\Logic\IAnimationStateReader.cs" />
-     <Compile Include="Assets\CodeBase\Services\Input\IInputService.cs" />
-     <Compile Include="Assets\CodeBase\Logic\LoadingCurtain.cs" />
+     <Compile Include="Assets\Scripts\Services\Input\InputService.cs" />
+     <Compile Include="Assets\Scripts\Services\Input\MobileInputService.cs" />
+     <Compile Include="Assets\Scripts\Logic\AnimatorStateReporter.cs" />
+     <Compile Include="Assets\Scripts\Hero\HeroAnimator.cs" />
+     <Compile Include="Assets\Scripts\Logic\AnimatorState.cs" />
+     <Compile Include="Assets\Scripts\CameraLogic\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\Infrastructure\GameBootstrapper.cs" />
+     <Compile Include="Assets\Scripts\Services\Input\StandaloneInputService.cs" />
+     <Compile Include="Assets\Scripts\Constants.cs" />
+     <Compile Include="Assets\Scripts\Infrastructure\Game.cs" />
+     <Compile Include="Assets\Scripts\Hero\HeroMove.cs" />
+     <Compile Include="Assets\Scripts\Logic\IAnimationStateReader.cs" />
+     <Compile Include="Assets\Scripts\Services\Input\IInputService.cs" />
+     <Compile Include="Assets\Scripts\Logic\LoadingCurtain.cs" />
      <Compile Include="Assets\SceneAssets\Fx\Beams\RandomizeLightStreak.cs" />
+     <Compile Include="Assets\Scripts\Infrastructure\GameStateMachine.cs" />
+     <Compile Include="Assets\Scripts\Infrastructure\IState.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
