@@ -13,9 +13,9 @@ namespace Scripts.Infrastructure
             _sceneLoader = sceneLoader;
         }
 
-        public void Enter()
+        public void Enter(string sceneName)
         {
-            _sceneLoader.Load("Main");
+            _sceneLoader.Load(sceneName);
         }
 
         public void Update()

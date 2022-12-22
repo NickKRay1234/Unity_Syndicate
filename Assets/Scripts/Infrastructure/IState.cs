@@ -1,9 +1,20 @@
 ﻿namespace Scripts.Infrastructure
 {
-    public interface IState
+    public interface IState : IExitableState
     {
         void Enter();
         void Update();
+    }
+
+    public interface IExitableState
+    {
         void Exit();
+    }
+
+
+    public interface IPayloadedState<TPayload> : IExitableState
+    {
+        void Enter(TPayload payload);
+        void Update();
     }
 }
