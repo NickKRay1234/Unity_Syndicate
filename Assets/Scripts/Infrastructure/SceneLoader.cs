@@ -14,7 +14,7 @@ namespace Scripts.Infrastructure
 
         private IEnumerator LoadScene(string nextScene, Action onLoaded = null)
         {
-            if (SceneManager.GetActiveScene().name == nextScene)
+            if (SceneManager.GetActiveScene().name == nextScene) // Проверка чтобы SceneLoader не загружал сцену если уже на ней находиться
             {
                 onLoaded?.Invoke();
                 yield break;

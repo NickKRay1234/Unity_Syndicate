@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Infrastructure;
+using UnityEngine;
 
 namespace Scripts.Infrastructure
 {
@@ -15,7 +16,7 @@ namespace Scripts.Infrastructure
     
     private void Update()
     {
-      _game.StateMachine.CurrentState.Update();
+      //_game.StateMachine.CurrentState.Update();
     }
   }
 }

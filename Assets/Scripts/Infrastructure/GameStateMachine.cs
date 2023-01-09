@@ -1,17 +1,13 @@
 using System;
 using System.Collections.Generic;
+using Scripts.Infrastructure;
 
-namespace Scripts.Infrastructure
+namespace Infrastructure
 {
     public class GameStateMachine
     {
         private readonly Dictionary<Type, IExitableState> _states;
-        private IExitableState _currentState;
-        public IExitableState CurrentState
-        {
-            get { return _currentState; }
-            set { _currentState = value; }
-        }
+        private IExitableState _activeState;
 
         public GameStateMachine(SceneLoader sceneLoader)
         {
@@ -22,24 +18,27 @@ namespace Scripts.Infrastructure
             };
         }
         
-        public void Enter<TState>() where TState : IState
+        public void Enter<TState>() where TState : class, IState
         {
-            _currentState?.Exit();
-            IState state = GetState<TState>();
-            _currentState = state;
+            IState state = ChangeState<TState>();
             state.Enter();
         }
 
-        private TState GetState<TState>() where TState : class, IExitableState => 
-            return _states[typeof(TState)] as TState;
-
-        public void Enter<TState, TPayload>(TPayload payload) where TState : IState
+        public void Enter<TState, TPayload>(TPayload payload) where TState : class, IPayloadedState<TPayload>
         {
-            _currentState?.Exit();
-            IState state = _states[typeof(TState)];
-            _currentState = state;
+            TState state = ChangeState<TState>();
             state.Enter(payload);
         }
+        
+        public TState ChangeState <TState>() where TState : class, IExitableState
+        {
+            _activeState?.Exit();
+            TState state = GetState<TState>();
+            _activeState = state;
+            return state;
+        }
+        
+        private TState GetState<TState>() where TState : class, IExitableState => _states[typeof(TState)] as TState;
 
     }
 }

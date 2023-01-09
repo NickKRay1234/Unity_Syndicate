@@ -1,6 +1,6 @@
-using System;
+using Scripts.Infrastructure;
 
-namespace Scripts.Infrastructure
+namespace Infrastructure
 {
     public class LoadLevelState : IState
     {
@@ -24,6 +24,11 @@ namespace Scripts.Infrastructure
 
         public void Exit()
         {
+        }
+
+        public void Enter()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

@@ -1,8 +1,8 @@
+using Scripts.Infrastructure;
 using Scripts.Services.Inputs;
 using UnityEngine;
 
-
-namespace Scripts.Infrastructure
+namespace Infrastructure
 {
     public class BootstrapState : IState
     {

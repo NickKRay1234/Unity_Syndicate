@@ -1,6 +1,7 @@
+using Scripts.Infrastructure;
 using Scripts.Services.Inputs;
 
-namespace Scripts.Infrastructure
+namespace Infrastructure
 {
   public class Game
   {
