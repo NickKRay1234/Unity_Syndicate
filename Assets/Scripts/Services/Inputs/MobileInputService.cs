@@ -1,3 +1,4 @@
+using Services.Inputs;
 using UnityEngine;
 
 namespace Scripts.Services.Inputs

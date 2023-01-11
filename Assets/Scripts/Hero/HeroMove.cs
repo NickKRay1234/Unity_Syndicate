@@ -1,6 +1,8 @@
 ﻿using Infrastructure;
+using Infrastructure.Services;
 using Scripts;
 using Scripts.Services.Inputs;
+using Services.Inputs;
 using UnityEngine;
 
 namespace Hero
@@ -9,21 +11,21 @@ namespace Hero
   {
     [SerializeField] private CharacterController _characterController;
     [SerializeField] private float _movementSpeed;
-
-    private IInputService _inputService;
+    private IInputService _input;
 
     private void Awake()
     {
-      _inputService = Game.InputService;
+      _input = AllServices.Container.Single<IInputService>();
+      _characterController = GetComponent<CharacterController>();
     }
 
     private void Update()
     {
       Vector3 movementVector = Vector3.zero;
 
-      if (_inputService.Axis.sqrMagnitude > Constants.Epsilon)
+      if (_input.Axis.sqrMagnitude > Constants.Epsilon)
       {
-        movementVector = Camera.main.transform.TransformDirection(_inputService.Axis);
+        movementVector = Camera.main.transform.TransformDirection(_input.Axis);
         movementVector.y = 0;
         movementVector.Normalize();
 

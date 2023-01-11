@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Infrastructure.AssetManagment
 {
-    public class Assets : IAssets
+    public class AssetProvider : IAssets
     {
         public GameObject Instantiate(string path, Vector3 at)
         {
