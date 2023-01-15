@@ -1,6 +1,7 @@
 ﻿using Data;
 using Infrastructure;
 using Infrastructure.Services;
+using Infrastructure.Services.Inputs;
 using Infrastructure.Services.PersistentProgress.PersistentProgressService;
 using Scripts;
 using Scripts.Services.Inputs;

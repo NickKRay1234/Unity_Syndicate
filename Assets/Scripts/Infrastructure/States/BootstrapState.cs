@@ -1,6 +1,7 @@
 using Infrastructure.AssetManagment;
 using Infrastructure.Factory;
 using Infrastructure.Services;
+using Infrastructure.Services.Inputs;
 using Infrastructure.Services.PersistentProgress.PersistentProgressService;
 using Scripts.Infrastructure;
 using Scripts.Services.Inputs;

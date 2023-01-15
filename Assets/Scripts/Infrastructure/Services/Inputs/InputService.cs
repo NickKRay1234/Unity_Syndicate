@@ -1,3 +1,4 @@
+using Infrastructure.Services.Inputs;
 using UnityEngine;
 
 namespace Services.Inputs

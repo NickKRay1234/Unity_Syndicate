@@ -1,7 +1,6 @@
-using Infrastructure.Services;
 using UnityEngine;
 
-namespace Services.Inputs
+namespace Infrastructure.Services.Inputs
 {
   public interface IInputService : IService
   {
