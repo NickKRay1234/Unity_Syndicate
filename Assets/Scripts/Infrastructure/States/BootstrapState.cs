@@ -1,6 +1,7 @@
 using Infrastructure.AssetManagment;
 using Infrastructure.Factory;
 using Infrastructure.Services;
+using Infrastructure.Services.PersistentProgress.PersistentProgressService;
 using Scripts.Infrastructure;
 using Scripts.Services.Inputs;
 using Services.Inputs;
@@ -36,6 +37,7 @@ namespace Infrastructure.States
         {
             _services.RegisterSingle<IInputService>(InputService());
             _services.RegisterSingle<IAssets>(new AssetProvider());
+            _services.RegisterSingle<IPersistentProgressService>(new PersistentProgressService());
             _services.RegisterSingle<IGameFactory>(new GameFactory(_services.Single<IAssets>()));
         }
 

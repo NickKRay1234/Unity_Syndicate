@@ -1,13 +1,16 @@
-﻿using Infrastructure;
+﻿using Data;
+using Infrastructure;
 using Infrastructure.Services;
+using Infrastructure.Services.PersistentProgress.PersistentProgressService;
 using Scripts;
 using Scripts.Services.Inputs;
 using Services.Inputs;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Hero
 {
-  public class HeroMove : MonoBehaviour
+  public class HeroMove : MonoBehaviour, ISavedProgress
   {
     [SerializeField] private CharacterController _characterController;
     [SerializeField] private float _movementSpeed;
@@ -35,6 +38,35 @@ namespace Hero
       movementVector += Physics.gravity;
 
       _characterController.Move(_movementSpeed * movementVector * Time.deltaTime);
+    }
+
+    public void UpdateProgress(PlayerProgress progress)
+    {
+      progress.WorldData.PositionOnLevel = new PositionOnLevel(CurrentLevel(), transform.position.AsVectorData());
+    }
+
+    private static string CurrentLevel()
+    {
+      return SceneManager.GetActiveScene().name;
+    }
+
+    private void Warp(Vector3Data to)
+    {
+      _characterController.enabled = false;
+      transform.position = to.AsUnityVector();
+      _characterController.enabled = true;
+    }
+    
+    
+
+    public void LoadProgress(PlayerProgress progress)
+    {
+      if (CurrentLevel() == progress.WorldData.PositionOnLevel.Level)
+      {
+        Vector3Data savedPosition = progress.WorldData.PositionOnLevel.Position;
+        if (savedPosition != null)
+          Warp(to: savedPosition);
+      }
     }
   }
 }
