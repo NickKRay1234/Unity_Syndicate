@@ -3,6 +3,7 @@ using Infrastructure.Factory;
 using Infrastructure.Services;
 using Infrastructure.Services.Inputs;
 using Infrastructure.Services.PersistentProgress.PersistentProgressService;
+using Infrastructure.Services.SaveLoads;
 using Scripts.Infrastructure;
 using Scripts.Services.Inputs;
 using Services.Inputs;
@@ -32,13 +33,15 @@ namespace Infrastructure.States
             _sceneLoader.Load(Initial, onLoaded: EnterLoadLevel);
         }
         
-        private void EnterLoadLevel() => _stateMachine.Enter<LoadLevelState, string>("Main");
+        private void EnterLoadLevel() => 
+            _stateMachine.Enter<LoadProgressState>();
 
         private void RegisterServices()
         {
             _services.RegisterSingle<IInputService>(InputService());
             _services.RegisterSingle<IAssets>(new AssetProvider());
             _services.RegisterSingle<IPersistentProgressService>(new PersistentProgressService());
+            _services.RegisterSingle<ISaveLoadService>(new SaveLoadService());
             _services.RegisterSingle<IGameFactory>(new GameFactory(_services.Single<IAssets>()));
         }
 

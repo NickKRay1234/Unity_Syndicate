@@ -20,7 +20,6 @@ namespace Infrastructure.States
 
         public void Exit()
         {
-            
         }
 
         public void Enter()
